@@ -15,17 +15,17 @@ The project structure is the following
 ```
 
 The data that will be loaded into the postgres database are in the 
-```source/salaries_data.csv```. I downloaded the salary data from
+```source/salaries_data.csv``` file. I downloaded the salary data from
 [kaggle](https://www.kaggle.com/datasets/mohithsairamreddy/salary-data).
-This dataset contain salary data based on Experience, Age, Gender,Job Title and 
-Education Level. You can use any other data in csv format as well.
+This dataset contains salary data based on experience, age, gender, function and
+level of education. You can also use other data in csv format.
 
-The ***apache beam pipeline*** itself is defined with the ```pipeline.py``` 
-file. It read the csv file a load its data to postgres.
+The ***apache beam*** pipeline itself is defined by the ```pipeline.py``` file, 
+which reads the csv file and loads its contents into a postgres table.
 
 Finally, the postgres database is defined with a Dockerfile 
-(```database/Dockerfile```). The ```init.sql``` file create table 
-```salaries``` in the database when it starts.
+(```database/Dockerfile```). The ``init.sql`` file creates the ``salaries`` 
+table in the database at startup.
 
 
 ## Create Virtual Environment
