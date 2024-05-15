@@ -57,10 +57,18 @@ Run the ```pipelinedb``` container with the command below
 docker run -it -p 5432:5432 --name pipelinedb --env-file .env pipelinedb
 ```
 The ```.env``` file contain environment variables (DB, USER, PASSWORD) useful for 
-the postgres container.
+the postgres container. Note that the ```.env``` is not versioned in the repository.
+Go to the database folder and run the following command to create the .env file
 
-The postgres database will be accessible from localhost with the following 
-uri
+```commandline
+cat <<EOF >> brightup.sh
+POSTGRES_DB=beamdb
+POSTGRES_USER=beamdb
+POSTGRES_PASSWORD=ra5hoxetRami5
+EOF
+```
+
+The postgres database will be accessible from localhost with the following uri
 ```postgres://localhost:5432/beamdb```
 
 ## Run the pipeline
@@ -77,7 +85,7 @@ python pipeline.py --input source/salaries_data.csv --dbhost localhost --dbport 
 After running the pipeline, salary data must be loaded into the ``salaries`` 
 table in the postgres database.
 
-To inspect you database, run the commands below
+To inspect your database, run the commands below
 
 1. Connect to the container
 ```commandline
