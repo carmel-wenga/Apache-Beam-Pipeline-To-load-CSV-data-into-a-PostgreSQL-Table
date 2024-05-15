@@ -61,7 +61,7 @@ the postgres container. Note that the ```.env``` is not versioned in the reposit
 Go to the database folder and run the following command to create the .env file
 
 ```commandline
-cat <<EOF >> brightup.sh
+cat <<EOF >> .env
 POSTGRES_DB=beamdb
 POSTGRES_USER=beamdb
 POSTGRES_PASSWORD=ra5hoxetRami5
